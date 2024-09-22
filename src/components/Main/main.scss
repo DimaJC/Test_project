@@ -1,0 +1,10 @@
+.mainWrapper {
+    display: flex;
+    gap: 16px;
+
+    .redBlock {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+}
