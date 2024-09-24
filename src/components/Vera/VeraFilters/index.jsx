@@ -1,46 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import generateUsers from './helpers/generateUsers';
+import {Users} from'../hepers/index'
 
-import './styles.scss'
+import './style.scss'
 
-function UserFilter() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [gender, setGender] = useState('');
-  const [isActive, setIsActive] = useState(false);
-  const [selectedAgeRange, setSelectedAgeRange] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [users, setUsers] = useState(generateUsers(10));
-  const [filteredUsers, setFilteredUsers] = useState(users);
+const UserFilter = () => {
 
-  useEffect(() => {
-    let filtered = users;
-
-    if (searchTerm) {
-      filtered = filtered.filter(user =>
-        user.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-
-    if (gender) {
-      filtered = filtered.filter(user => user.gender === gender);
-    }
-
-    if (isActive) {
-      filtered = filtered.filter(user => user.isActive === isActive);
-    }
-
-    if (selectedAgeRange) {
-      const [minAge, maxAge] = selectedAgeRange.split('-').map(Number);
-      filtered = filtered.filter(user => user.age >= minAge && user.age <= maxAge);
-    }
-
-    
-    if (selectedCountry) {
-      filtered = filtered.filter(user => user.country === selectedCountry);
-    }
-
-    setFilteredUsers(filtered);
-  }, [searchTerm, gender, isActive, selectedAgeRange, selectedCountry, users]);
+  const[searchTerm, setSearchTerm] = useState ('');
+  const[gender, setGender] = useState ('');
+  const[isActive, setIsActive] = useState (false);
+  const[selectedAgeRange, setSelectedAgeRange] = useState ('');
+  const[selectedCountry, setSelectedCountry] = useState ('');
 
   const resetFilters = () => {
     setSearchTerm('');
@@ -48,90 +17,95 @@ function UserFilter() {
     setIsActive(false);
     setSelectedAgeRange('');
     setSelectedCountry('');
-    setFilteredUsers(users); 
   };
 
-  return (
-    <div className="user-filter">
-      <h1>Фильтр пользователей</h1>
+    const handleSearchChange = (event) => setSearchTerm(event.target.value);
+    const handleGenderChange = (event) => setGender(event.target.value);
+    const handleActiveChange = (event) => setIsActive(event.target.checked);
+    const handleAgeRange = (event) => setIsActive(event.target.value);
+    const handleCountryChange = (event) => setSelectedCountry(event.target.value);
 
-      <input
-        type="text"
-        placeholder="Поиск по имени"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="input-field"
-      />
+      const  filteredUsers = Users.filter(user => {
+        const matchesName = user.name.toLowerCase().includes(searchTerm.toLocaleLowerCase());
+        const matchesGender = gender ? user.gender === gender : true;
+        const matchesActivity = isActive ? user.isActive === true : true;
+        const matchesAge = selectedAgeRange ? (
+          selectedAgeRange ==='20-30' && user.age >= 20 && user.age <= 30||
+          selectedAgeRange ==='30-40' && user.age >= 30 && user.age <= 40||
+          selectedAgeRange ==='40-50' && user.age >= 40 && user.age <= 50
+        ) : true
+        const matchesCountry = selectedCountry ? user.country === selectedCountry : true;
 
-      <div className="gender-filters">
-        <label>
-          <input
-            type="radio"
-            name="gender"
-            value="Male"
-            checked={gender === 'Male'}
-            onChange={(e) => setGender(e.target.value)}
-          />
-          Мужской
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="gender"
-            value="Female"
-            checked={gender === 'Female'}
-            onChange={(e) => setGender(e.target.value)}
-          />
-          Женский
-        </label>
-      </div>
+        return matchesName && matchesGender && matchesActivity && matchesAge && matchesCountry;
+      });
 
-      <label className="checkbox-filter">
-        <input
-          type="checkbox"
-          checked={isActive}
-          onChange={(e) => setIsActive(e.target.checked)}
-        />
-        Активные пользователи
-      </label>
+      return (
+        <div>
+          <div>
+            <h2>User List</h2>
+            <input
+              type="text"
+              placeholder="Search by name"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+          </div>
 
-      <select
-        value={selectedAgeRange}
-        onChange={(e) => setSelectedAgeRange(e.target.value)}
-        className="select-filter"
-      >
-        <option value="">Любой возраст</option>
-        <option value="20-30">20-30</option>
-        <option value="30-40">30-40</option>
-        <option value="40-50">40-50</option>
-      </select>
+          <div className= "genderWrapper">
+            <label>
+                <input 
+                  type="radio" 
+                  name="gender"
+                  value="Male"
+                  checked={gender === 'Male'}
+                  onChange={handleGenderChange}
+                />
+                Male
+            </label>
+            <label>
+              <input 
+                type="radio"
+                name="gender"
+                value="Female"
+                checked={gender === 'Female'}
+                onChange={handleGenderChange} 
+              />
+              Female
+            </label>
+          </div>
+          <label >
+            <input
+              name="isActive"
+              type="checkbox"
+              checked={isActive}
+              onChange={handleActiveChange}
+            />
+              Active
+          </label>
 
-      <select
-        value={selectedCountry}
-        onChange={(e) => setSelectedCountry(e.target.value)}
-        className="select-filter"
-      >
-        <option value="">Любая страна</option>
-        <option value="USA">США</option>
-        <option value="Canada">Канада</option>
-        <option value="Germany">Германия</option>
-        <option value="Japan">Япония</option>
-      </select>
+          <select 
+            name="selectCountry" value={selectedCountry} onChange={handleCountryChange} >
+              <option value="">All countries</option>
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              <option value="Germany">Germany</option>
+              <option value="Japan">Japan</option>
+          </select>
 
-      <button onClick={resetFilters} className="reset-button">
-        Сбросить фильтры
-      </button>
+            <button onClick={resetFilters}>Reset Filters</button>
 
-      <h2>Список пользователей:</h2>
-      <ul className="user-list">
-        {filteredUsers.map(user => (
-          <li key={user.id} className="user-item">
-            {user.name}, {user.age} лет, {user.gender}, {user.country}, {user.isActive ? 'Активен' : 'Неактивен'}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+            <ul>
+              {filteredUsers.map(user =>(
+                <li key={user.id}>
+                  {user.name} ({user.age}, {user.gender}, {user.country}) - {user.isActive ? 'Active' : 'Inactive'}
+                </li>
+              ))}
+            </ul>
+        </div>
 
+
+      )
+
+
+  }
 export default UserFilter;
