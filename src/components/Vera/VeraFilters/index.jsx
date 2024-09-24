@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Users} from'../hepers/index'
+import {Users} from'../constants/index'
 
 import './style.scss'
 
@@ -21,7 +21,7 @@ const UserFilter = () => {
 
     const handleSearchChange = (event) => setSearchTerm(event.target.value);
     const handleGenderChange = (event) => setGender(event.target.value);
-    const handleActiveChange = (event) => setIsActive(event.target.checked);
+    const handleActiveChange = (event) => setIsActive(event.target.ch);
     const handleAgeRange = (event) => setIsActive(event.target.value);
     const handleCountryChange = (event) => setSelectedCountry(event.target.value);
 
