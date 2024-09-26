@@ -5,6 +5,7 @@ import MainPage from './components/Main';
 import ToDOList from './components/ToDOList';
 import Persons from './components/Persons';
 import UserFilter from './components/Vera/VeraFilters';
+import FilterSystem from './Edgaras/PersonsFilterSystem'
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       {/* <MainPage /> */}
       {/* <ToDOList /> */}
       {/*<Persons />*/}
-      <UserFilter/>
-      
+      {/* <UserFilter/> */}
+      {/* <Persons /> */}
+      {/* <FilterSystem/>  */}
     </div>
   );
 }
