@@ -21,7 +21,7 @@ const UserFilter = () => {
 
     const handleSearchChange = (event) => setSearchTerm(event.target.value);
     const handleGenderChange = (event) => setGender(event.target.value);
-    const handleActiveChange = (event) => setIsActive(event.target.ch);
+    const handleActiveChange = () => setIsActive((prevState) => !prevState);
     const handleAgeRange = (event) => setIsActive(event.target.value);
     const handleCountryChange = (event) => setSelectedCountry(event.target.value);
 
