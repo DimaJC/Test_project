@@ -6,7 +6,7 @@ import ToDOList from './components/ToDOList';
 import Persons from './components/Persons';
 import UserFilter from './components/Vera/VeraFilters';
 import FilterSystem from './Edgaras/PersonsFilterSystem';
-import Contacts from './components/Vera/contacts';
+//import Contacts from './components/Vera/contacts';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       {/* <UserFilter/> */}
       {/* <Persons /> */}
       {/* <FilterSystem/>  */}
-      <Contacts/>
+      {/*<Contacts/>*/}
     </div>
   );
 }
