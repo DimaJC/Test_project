@@ -1,121 +1,121 @@
 .contact-manager-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  
-    @media (max-width: 600px) {
-      padding: 10px;
-    }
-  }
-  
-  .contact-manager-title {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .contact-manager-form {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  
-    @media (max-width: 600px) {
-      flex-direction: column;
-    }
-  }
-  
-  .contact-manager-input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    width: 100%;
-  
-    @media (max-width: 600px) {
-      width: 100%;
-    }
-  }
-  
-  .contact-manager-add-button {
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-  
-  .contact-manager-filter-sort {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  
-    @media (max-width: 600px) {
-      flex-direction: column;
-    }
-  }
-  
-  .contact-manager-filter,
-  .contact-manager-sort {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 48%;
-  
-    @media (max-width: 600px) {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-  
-  .contact-manager-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .contact-manager-item {
-    flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  @media (max-width: 600px) {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    @media (max-width: 600px) {
-      flex-direction: column;
-    }
   }
-  
-  .contact-manager-info {
+}
+
+.contact-manager-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-manager-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  @media (max-width: 600px) {
     flex-direction: column;
-    flex: 1;
-    display: flex;
-    gap: 10px;
   }
-  
-  .contact-manager-edit-input {
+}
+
+.contact-manager-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.contact-manager-add-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.contact-manager-filter-sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  @media (max-width: 600px) {
     flex-direction: column;
-    padding: 5px;
-    margin-right: 5px;
   }
-  
-  .contact-manager-edit-button,
-  .contact-manager-delete-button,
-  .contact-manager-save-button {
-    padding: 5px 10px;
-    margin-left: 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+}
+
+.contact-manager-filter,
+.contact-manager-sort {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 48%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  .contact-manager-filter-sort {
-    .contact-manager-sort {
-        width: auto;
-        padding: 8px 12px;
-   }
+}
+
+.contact-manager-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-manager-item {
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
   }
+}
+
+.contact-manager-info {
+  flex-direction: column;
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.contact-manager-edit-input {
+  flex-direction: column;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.contact-manager-edit-button,
+.contact-manager-delete-button,
+.contact-manager-save-button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contact-manager-filter-sort {
+  .contact-manager-sort {
+    width: auto;
+    padding: 8px 12px;
+  }
+}

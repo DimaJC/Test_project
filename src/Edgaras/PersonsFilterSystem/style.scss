@@ -1,44 +1,44 @@
-*{
-    margin: 0;
+* {
+  margin: 0;
 }
 
 .main {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  .Filter {
     position: relative;
-    width: 70%;
-    margin: 0 auto;
-    .Filter {
-        position: relative;
-        display: inline-block;
-        padding: 10px 15px;
-        border-radius: 10px 20px;
-        border: solid black 1px;
-        margin: 10px;
-        .Buttons {
-            display: none;
-            position: absolute;
-            min-width: 100px;
-            padding: 10px;
-            z-index: 1;
-            background-color: #fff;
-            border: solid black 1px;
-            border-radius: 5px;
-        }
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px 20px;
+    border: solid black 1px;
+    margin: 10px;
+    .Buttons {
+      display: none;
+      position: absolute;
+      min-width: 100px;
+      padding: 10px;
+      z-index: 1;
+      background-color: #fff;
+      border: solid black 1px;
+      border-radius: 5px;
     }
-    .Filter:hover  .Buttons {
-        display: block;
+  }
+  .Filter:hover .Buttons {
+    display: block;
+  }
+  .PepplesContainer {
+    width: 100%;
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+    .Pepples {
+      border: solid gray 2px;
+      width: 20%;
+      border-radius: 5px;
+      padding: 10px;
     }
-    .PepplesContainer {
-        width: 100%;
-        gap: 15px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 100px;
-        .Pepples {
-            border: solid gray 2px;
-            width: 20%;
-            border-radius: 5px;
-            padding: 10px;
-        }
-    }
+  }
 }

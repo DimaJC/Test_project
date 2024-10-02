@@ -1,11 +1,11 @@
 .itemsWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 
-    .cardsWrapper {
-        padding: 16px;
-        border: solid silver 1px;
-        border-radius: 20px;
-    }
+  .cardsWrapper {
+    padding: 16px;
+    border: solid silver 1px;
+    border-radius: 20px;
+  }
 }
