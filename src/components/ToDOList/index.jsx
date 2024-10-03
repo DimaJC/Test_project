@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 
 import "./ToDOList.scss";
 
@@ -7,6 +8,17 @@ const ToDOList = () => {
   const [text, setText] = useState("");
   const [editText, setEditText] = useState("");
   const [editTodo, setEditTodo] = useState(null);
+
+  useEffect(() => {
+    const todo = JSON.parse(localStorage.getItem('todo'));
+    if (!!todo && !!todo.length) {
+      setTodos(todo);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todo', JSON.stringify(todos));
+  }, [todos]);
 
   const handleChange = (event) => {
     setText(event.target.value);
