@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import "./styles.scss";
@@ -41,7 +42,26 @@ const Header = () => {
     [routes]
   );
 
-  return <header>{renderRoutes}</header>;
+  const { i18n, t } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  return (
+    <header>
+      {renderRoutes}
+      <div>
+        <button onClick={() => changeLanguage('en')}>English</button>
+        <button onClick={() => changeLanguage('uk')}>Українська</button>
+        <div>
+          <span>{t('test_1')} </span>
+          <span>{t('test_2')} </span>
+          <span>{t('test_3')} </span>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Header;
