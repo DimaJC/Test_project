@@ -13,6 +13,10 @@ const veraRoutes = [
       to: ROUTES.VERA_FILTER,
       title: "Filter",
     },
+    {
+      to: ROUTES.VERA_TRANSACTION,
+      title: "Transaction",
+    }
   ];
   const dimaRoutes = [
     {

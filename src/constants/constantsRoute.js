@@ -1,6 +1,7 @@
 export const ROUTES = {
     VERA_CONTACTS: "/vera/contacts",
     VERA_FILTER: "/vera/filter",
+    VERA_TRANSACTION: "/vera/transaction",
     DIMA_MAIN: "/dima/main",
     DIMA_PERSONS: "/dima/persons",
     DIMA_TO_DO_LIST: "/dima/to-do-list",

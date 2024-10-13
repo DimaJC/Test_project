@@ -12,6 +12,7 @@ import Contacts from './Vera/constants/contacts';
 import UserFilter from './Vera/constants/VeraFilters'
 import Header from './Vera/constants/Header';
 import { ROUTES } from './constants/constantsRoute';
+import Transaction from './Vera/constants/Transaction/Transaction';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path={ROUTES.VERA_FILTER} element={<UserFilter />} />
         <Route path={ROUTES.DIMA_PERSONS} element={<Persons />} />
         <Route path={ROUTES.EDGAR_PEAPLE_LIST} element={<FilterSystem />} />
+        <Route path={ROUTES.VERA_TRANSACTION} element={<Transaction/>}/>
       </Routes>
     </BrowserRouter>
   );
