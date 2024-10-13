@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Users } from "../constants/index";
 
-//import './style.scss'
+import './style.scss'
 
 const UserFilter = () => {
   const [searchTerm, setSearchTerm] = useState("");
