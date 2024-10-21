@@ -38,7 +38,7 @@ const Header = () => {
           {title}
         </Link>
       )),
-    [routes]
+    [routes],
   );
 
   const { i18n, t } = useTranslation();

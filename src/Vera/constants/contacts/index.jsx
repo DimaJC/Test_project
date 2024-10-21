@@ -40,8 +40,8 @@ function Contacts() {
   const handleSaveEdit = () => {
     setContactList(
       contactList.map((contact) =>
-        contact.id === editingContact.id ? editingContact : contact
-      )
+        contact.id === editingContact.id ? editingContact : contact,
+      ),
     );
     setEditingContact(null);
   };
@@ -55,7 +55,7 @@ function Contacts() {
     .filter(
       (contact) =>
         contact.firstName.toLowerCase().includes(filter.toLowerCase()) ||
-        contact.lastName.toLowerCase().includes(filter.toLowerCase())
+        contact.lastName.toLowerCase().includes(filter.toLowerCase()),
     )
     .sort((a, b) => {
       if (sortBy === "firstName") {

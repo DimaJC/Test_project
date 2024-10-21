@@ -47,7 +47,7 @@ const ToDOList = () => {
     setTodos(
       todos.map((item) => {
         return item.id === editTodo ? { ...item, text: editText } : item;
-      })
+      }),
     );
     setEditText("");
     setEditTodo(null);
