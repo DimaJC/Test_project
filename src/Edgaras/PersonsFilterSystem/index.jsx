@@ -3,7 +3,6 @@ import { USERS } from "./PeapleList/List";
 import "./style.scss";
 
 function FilterSystem() {
-  // console.log(...USERS)
   const [Users, SetUser] = useState([]);
   const [isActive, setIsActive] = useState(true);
   const [gender, setGender] = useState("All");
@@ -137,6 +136,9 @@ function FilterSystem() {
           </div>
         </div>
       </div>
+      <div className="PepplesContainer">{ItemRender()}</div>
+      {/* </div>
+      </div> */}
       <div className="PepplesContainer">{ItemRender()}</div>
     </div>
   );

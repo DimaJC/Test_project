@@ -1,0 +1,45 @@
+header {
+  flex-wrap: nowrap;
+  padding: 15px;
+  box-shadow: 0px 1px 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  z-index: 1;
+  .Container {
+    display: flex;
+    align-items: center;
+    .imgContainer {
+      flex: 1;
+      img {
+        width: 100px;
+      }
+    }
+    .nav {
+      display: flex;
+      position: relative;
+      .SubNav {
+        position: relative;
+        .SubNavContent {
+          display: none;
+          min-width: 100px;
+          padding: 10px 0;
+          gap: 10px;
+          background-color: black;
+        }
+        .Dima {
+          display: flex;
+        }
+        .Vera {
+          display: flex;
+        }
+        .Edgar {
+          display: flex;
+        }
+      }
+    }
+    .Refresh {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}
