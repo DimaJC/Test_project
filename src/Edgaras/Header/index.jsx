@@ -1,90 +1,66 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import Logo from "./img/Logo.png";
-import "./style.scss";
 
-const peopleRoutes = {
-  "Dima": [
-    {
-        name: 'Dima',
-        to: '/Dima',
-        title: 'Home'
-    }
-  ],
-  "Vera": [
-    {
-      name: 'Vera',
-      to: '/Vera',
-      title: 'Home'
-    }
-  ],
-  "Edgar": [
-    {
-      name: 'Edgar',
-      to: '/Edgar',
-      title: 'Home'
-    },
-    {
-      name: 'Edgar',
-      to: '/filter-system',
-      title: 'FilterSystem'
-    },
-    {
-      name: 'Edgar',
-      to: '/LightFolio',
-      title: 'LightFolio'
-    }
-  ],
-};
+// import "./styles.scss";
 
-const Header = () => {
-  const [Class, setNewClass] = useState(null);
+const routes = [
+  {
+    to: "/",
+    title: "Home",
+  },
+  {
+    to: "/vera/contacts",
+    title: "contacts",
+  },
+  {
+    to: "/to-do-list",
+    title: "to-do-list",
+  },
+  {
+    to: "/user-filter",
+    title: "user-filter",
+  },
+  {
+    to: "/persons",
+    title: "persons",
+  },
+  {
+    to: "/filter-system",
+    title: "filter-system",
+  },
+];
+const EdgarHeader = () => {
+  const renderRoutes = useMemo(
+    () =>
+      routes.map(({ to, title }, index) => (
+        <Link key={index} to={to}>
+          {title}
+        </Link>
+      )),
+    [routes]
+  );
 
-  const handleClick = (name) => () => {
-    setNewClass((prevClass) => (prevClass === name ? null : name));
+  const { i18n, t } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
-  const renderLink = useMemo(() => {
-    if (!Class || !peopleRoutes[Class]) return null;
-
-    return peopleRoutes[Class].map(route => (
-      <Link key={route.to} to={route.to}>
-        {route.title}
-      </Link>
-    ));
-  }, [Class]);
-
-  const renderSubNav = () => {
-    return (
-      <div className="SubNav">
-        <button onClick={handleClick("Dima")}>Dima</button>
-        <button onClick={handleClick("Vera")}>Vera</button>
-        <button onClick={handleClick("Edgar")}>Edgar</button>
-
-        {Class && (<div className={`SubNavContent ${Class}`}>
-                    {renderLink}
-                  </div>
-        )}
-      </div>
-      )}
-
-  const RenderHeadElements = () => {
-    return (
-      <div className="Container">
-        <div className="imgContainer">
-          <img src={Logo} alt="" />
-        </div>
-        <div className="nav">
-          {renderSubNav()}
-        </div>
-        <div className="Refresh">
-          <button>Refresh Page</button>
+  return (
+    <header>
+      {renderRoutes}
+      <div>
+        <button onClick={() => changeLanguage('en')}>English</button>
+        <button onClick={() => changeLanguage('uk')}>Українська</button>
+        <div>
+          <span>{t('test_1')} </span>
+          <span>{t('test_2')} </span>
+          <span>{t('test_3')} </span>
         </div>
       </div>
-    );
-  };
-
-  return <header>{RenderHeadElements()}</header>;
+    </header>
+  );
 };
 
-export default Header;
+export default EdgarHeader;
