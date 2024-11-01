@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Users } from "../constants/index";
+import { Users } from "./names";
 
 import './style.scss'
 

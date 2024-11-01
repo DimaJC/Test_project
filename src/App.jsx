@@ -7,17 +7,19 @@ import MainPage from './components/Main';
 import ToDOList from './components/ToDOList';
 import Persons from './components/Persons';
 import FilterSystem from './Edgaras/PersonsFilterSystem';
-//import Header from './components/Header/Index';
+// import Header from './components/Header/Index';
 import Contacts from './Vera/constants/contacts';
-import UserFilter from './Vera/constants/VeraFilters'
-import Header from './Vera/constants/Header';
+import UserFilter from './Vera/constants/VeraFilters';
+// import Header from './Vera/constants/Header';
 import { ROUTES } from './constants/constantsRoute';
 import Transaction from './Vera/constants/Transaction/Transaction';
+import Rezume from './Edgaras/Rezume';
+import EdgarHeader from './Edgaras/Header';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <EdgarHeader />
       <Routes>
         <Route path={ROUTES.DIMA_MAIN} element={<MainPage />} />
         <Route path={ROUTES.VERA_CONTACTS} element={<Contacts />} />
@@ -25,11 +27,10 @@ function App() {
         <Route path={ROUTES.VERA_FILTER} element={<UserFilter />} />
         <Route path={ROUTES.DIMA_PERSONS} element={<Persons />} />
         <Route path={ROUTES.EDGAR_PEAPLE_LIST} element={<FilterSystem />} />
-        <Route path={ROUTES.VERA_TRANSACTION} element={<Transaction/>}/>
+        <Route path={ROUTES.VERA_TRANSACTION} element={<Transaction />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
 
 export default App;
