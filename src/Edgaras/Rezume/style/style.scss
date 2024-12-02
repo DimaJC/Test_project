@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&display=swap');
+// font-family: "Prata", serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&display=swap');
+// font-family: "Poppins", sans-serif;
+.root-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .rezume-header {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        width: 595px;
+        background-image: url(../img/background.png);
+        height: 200px;
+        align-items: center;
+        .avatar {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 104px;
+            }
+        }
+        .text{
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            .first {
+                font-size: 14px;
+                color: rgba(202, 109, 24, 1);
+                font-family: "Prata", serif;
+            }
+            .next {
+                font-size: 35px;
+                font-family: "Prata", serif;
+            }
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            a {
+                display: flex;
+                align-items: center;
+                font-size: 10px;
+                padding: 4px;
+                img {
+                    padding: 0 5px;
+                    width: 12px;
+                }
+            }
+        }
+        button {
+            top: 0;
+            right: 0;
+            position: absolute;
+            width: 70px;
+            font-size: 12px;
+            border: none;
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(251, 242, 228, 0.5);
+                color: black;
+                border: 1px solid black;
+                border-radius: 5px;
+                width: 100px;
+            }
+        }
+    }
+
+    .next-text {
+        width: 595px;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1%;
+        .half {
+            width: 49%;
+            .tag {
+                font-size: 14px;
+                font-weight: 400;
+                font-family: "Prata", serif;
+                color: rgba(202, 109, 24, 1);
+                padding: 25px 0 0 10px;
+            }
+            .text-block {
+                padding: 10px;
+                .big-tag {
+                    font-size: 14px;
+                    font-weight: 400;
+                    font-family: "Parata", serif;
+                }
+                .small-text {
+                    font-size: 11px;
+                    font-weight: 400;
+                    font-family: "Parata", serif;
+                    color: rgba(121, 121, 121, 1);
+                    padding: 0 0 5px 0;
+                }
+                .text-area {
+                    font-size: 10px;
+                    font-weight: 400;
+                    font-family: "Poppins", sans-serif;
+                }
+                .next-big-tag {
+                    font-size: 12px;
+                    font-weight: 400;
+                    font-family: "Poppins", sans-serif;
+                }
+                .next-small-text {
+                    font-size: 11px;
+                    font-weight: 400;
+                    font-family: "Prata", serif;
+                    color: rgba(121, 121, 121, 1);
+                }
+            }
+        }
+    }
+    .tags {
+        width: 595px;
+        display: flex;
+        flex-wrap: wrap;
+        .tag {
+            width: 100%;
+            padding: 20px 0 0 10px;
+            font-size: 14px;
+            font-family: "Prata", serif;
+            font-weight: 400;
+            color: rgba(202, 109, 24, 1);
+        }
+        .colum {
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr;
+            display: grid;
+            padding: 10px;
+            p {
+                font-size: 10px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+            }
+        }
+    }
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    input {
+        margin: 10px 0;
+    }
+}

@@ -6,4 +6,6 @@ export const ROUTES = {
     DIMA_PERSONS: "/dima/persons",
     DIMA_TO_DO_LIST: "/dima/to-do-list",
     EDGAR_PEAPLE_LIST: "/edgar/peaple-list",
+    EDGAR_FIGMA: "/Edgaras/Templates",
+    EDGAR_REZUME: "/Edgaras/Rezume",
 };

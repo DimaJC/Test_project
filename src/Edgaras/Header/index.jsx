@@ -8,7 +8,12 @@ const peopleRoutes = {
     {
         name: 'Dima',
         to: '/Dima',
-        title: 'Home'
+        title: 'Home',
+    },
+    {
+      name: 'Dima',
+      to: '/dima/to-do-list',
+      title: 'ToDoList',
     }
   ],
   "Vera": [
@@ -31,9 +36,14 @@ const peopleRoutes = {
     },
     {
       name: 'Edgar',
-      to: '/LightFolio',
+      to: '/Edgaras/Templates',
       title: 'LightFolio'
-    }
+    },
+    {
+      name: 'Edgar',
+      to: '/Edgaras/Rezume',
+      title: 'Rezume'
+    },
   ],
 };
 
@@ -57,9 +67,9 @@ const Header = () => {
   const renderSubNav = () => {
     return (
       <div className="SubNav">
-        <button onClick={handleClick("Dima")}>Dima</button>
-        <button onClick={handleClick("Vera")}>Vera</button>
-        <button onClick={handleClick("Edgar")}>Edgar</button>
+        <button className="mini-but" onClick={handleClick("Dima")}>Dima</button>
+        <button className="mini-but" onClick={handleClick("Vera")}>Vera</button>
+        <button className="mini-but" onClick={handleClick("Edgar")}>Edgar</button>
 
         {Class && (<div className={`SubNavContent ${Class}`}>
                     {renderLink}
