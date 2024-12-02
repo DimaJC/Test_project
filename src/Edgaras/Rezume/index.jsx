@@ -176,6 +176,11 @@ const RootBlockOfRezume = () => {
                     <div className="next-text">
                         <div className="half">
                             <p className="tag">Work experience</p>
+                            <input 
+                            type="text"
+                            value={TextWork}
+                            
+                             />
                             {renderWorkElements()}
                         </div>
                         <div className="half">
