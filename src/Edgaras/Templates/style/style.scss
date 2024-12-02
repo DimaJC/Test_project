@@ -4,7 +4,7 @@ html {
     margin: 0;
     font-family: "Inter", sans-serif;
     @media (max-width: 1440px) {
-        header {
+        .header {
             .mini-menu {
                 padding: 12px 0 !important;
                 a {
@@ -133,7 +133,7 @@ html {
         }
     }
     @media (max-width: 1025px) {
-        header {
+        .header {
             .mini-menu {
                 padding: 11px 0 !important;
                 a {
@@ -262,7 +262,7 @@ html {
         }
     } 
     @media (max-width: 834px) {
-        header {
+        .header {
             .mini-menu {
                 padding: 10px 0 !important;
                 a {
@@ -391,7 +391,7 @@ html {
         }
     }
     @media (max-width: 641px) {
-        header {
+        .header {
             .mini-menu {
                 padding: 8px 0 !important;
                 a {
@@ -521,7 +521,7 @@ html {
         }
     }
     @media (max-width: 480px) {
-        header {
+        .header {
             .mini-menu {
                 padding: 8px 0 !important;
                 a {
@@ -651,7 +651,7 @@ html {
         }
     }
     @media (max-width: 425px) {
-        header {
+        .header {
             .mini-menu {
                 padding: 8px 0 !important;
                 a {
@@ -780,7 +780,7 @@ html {
             }
         }
     }
-header {
+.header {
     display: flex;
     flex-wrap: wrap;
     width: 100%;

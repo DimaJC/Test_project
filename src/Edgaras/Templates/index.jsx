@@ -11,10 +11,10 @@ import Back from "./img/Back.png";
 const LightFolio = () => {
     return (
         <html>
-            <header>
+            <div className="header">
                 <div className="mini-menu"><a href="">A portfolio template for designers</a><p>·</p><a href="">View all templates</a></div>
                 <div className="main-menu"><a href="">Work</a><a href="">About</a><a href="">Contact</a></div>
-            </header>
+            </div>
             <main>
                 <div className="main-container">
                     <div className="main">

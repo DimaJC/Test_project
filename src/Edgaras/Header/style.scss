@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+// font-family: "Montserrat", sans-serif;
 header {
   flex-wrap: nowrap;
   padding: 15px;
@@ -21,10 +23,15 @@ header {
         position: relative;
         .SubNavContent {
           display: none;
-          min-width: 100px;
-          padding: 10px 0;
+          position: absolute;
+          padding: 10px 10px;
           gap: 10px;
-          background-color: black;
+          text-align: center;
+          width: 100px;
+          a {
+            color: black;
+            text-decoration: none;
+          }
         }
         .Dima {
           display: flex;
@@ -34,6 +41,29 @@ header {
         }
         .Edgar {
           display: flex;
+        }
+        .mini-but {
+          padding: 10px 20px;
+          background-color: transparent;
+          border: none;
+          font-size: 16px;
+          font-weight: 500;
+          text-transform: uppercase;
+          cursor: pointer;
+          background-color: black;
+          margin: 5px;
+          color: #fff;
+          border-radius: 3px;
+          transition: 0.4s;
+          font-family: "Montserrat", sans-serif;
+          border: 1px solid transparent;
+          &:hover {
+            background-color: transparent;
+            border: solid 1px #000;
+            color: #000;
+            padding: 10px 30px; 
+            border-radius: 5px;
+          }
         }
       }
     }
