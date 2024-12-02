@@ -9,110 +9,111 @@ import link_in from "./img/link_in.svg";
 import phone from "./img/phone.svg";
 // import background form "./img/background.svg";
 
+const workExperience = [
+    {
+        Profession: "Profession",
+        Date: "Date",
+        Description: "Description"
+    },
+    {
+        Profession: "Profession",
+        Date: "Date",
+        Description: "Description"
+    },
+    {
+        Profession: "Profeasdasdssion",
+        Date: "Date",
+        Description: "Description"
+    },
+    
+];
+
+const educationLearning = [
+    {
+        Profession: "Profession",
+        studylocation: "Study Location",
+    },
+    {
+        Profession: "Profession",
+        studylocation: "Study Location",
+    },
+];
+
+const contactaray = [
+  {
+    mail: "kate.bishop@katedesign.com",
+    site: "https://www.linkedin.com/in/kate-bishop",
+    phone: "+46 98-765 43 21",
+  }  
+];
+
+const skillsaray = [
+    {
+        skill: "Product discovery"
+    },
+    {
+        skill: "Business analysis"
+    },
+    {
+        skill: "UX research & testing"
+    },
+    {
+        skill: "Customer journey mapping"
+    },
+    {
+        skill: "Information architecture"
+    },
+    {
+        skill: "Wireframing"
+    },
+    {
+        skill: "Prototyping"
+    },
+    {
+        skill: "UI design"
+    },
+    {
+        skill: "Illustration"
+    },
+    {
+        skill: "Interaction design"
+    },
+    {
+        skill: "Design system"
+    },
+    {
+        skill: "Design sprints"
+    },
+    {
+        skill: "Workshop facilitation"
+    },
+    {
+        skill: "A/B testing "
+    },
+    {
+        skill: "Figma"
+    },
+    {
+        skill: "Sketch"
+    },
+    {
+        skill: "Adobe Illustrator"
+    },
+    {
+        skill: "Miro"
+    },
+    {
+        skill: "Notion"
+    },
+    {
+        skill: "Jira"
+    },
+];
 
 const RootBlockOfRezume = () => {
-        const workExperience = [
-            {
-                Profession: "Profession",
-                Date: "Date",
-                Description: "Description"
-            },
-            {
-                Profession: "Profession",
-                Date: "Date",
-                Description: "Description"
-            },
-            {
-                Profession: "Profeasdasdssion",
-                Date: "Date",
-                Description: "Description"
-            },
-            
-        ];
-
-        const educationLearning = [
-            {
-                Profession: "Profession",
-                studylocation: "Study Location",
-            },
-            {
-                Profession: "Profession",
-                studylocation: "Study Location",
-            },
-        ];
-
-        const contactaray = [
-          {
-            mail: "kate.bishop@katedesign.com",
-            site: "https://www.linkedin.com/in/kate-bishop",
-            phone: "+46 98-765 43 21",
-          }  
-        ];
-
-        const skillsaray = [
-            {
-                skill: "Product discovery"
-            },
-            {
-                skill: "Business analysis"
-            },
-            {
-                skill: "UX research & testing"
-            },
-            {
-                skill: "Customer journey mapping"
-            },
-            {
-                skill: "Information architecture"
-            },
-            {
-                skill: "Wireframing"
-            },
-            {
-                skill: "Prototyping"
-            },
-            {
-                skill: "UI design"
-            },
-            {
-                skill: "Illustration"
-            },
-            {
-                skill: "Interaction design"
-            },
-            {
-                skill: "Design system"
-            },
-            {
-                skill: "Design sprints"
-            },
-            {
-                skill: "Workshop facilitation"
-            },
-            {
-                skill: "A/B testing "
-            },
-            {
-                skill: "Figma"
-            },
-            {
-                skill: "Sketch"
-            },
-            {
-                skill: "Adobe Illustrator"
-            },
-            {
-                skill: "Miro"
-            },
-            {
-                skill: "Notion"
-            },
-            {
-                skill: "Jira"
-            },
-        ]
         const [WorkExperience, SetAray] = useState([]);
         const [TextWork, SetTextWork] = useState("");
+        const [isEdit, setIsEdit] = useState(false);
 
         const [EducationLearning, SetAray2] = useState([]);
         const [Contact, SetContact] = useState([]);
@@ -130,6 +131,8 @@ const RootBlockOfRezume = () => {
                 <p className="big-tag">{item.Profession}</p>
                 <p className="small-text">{item.Date}</p>
                 <p className="text-area">{item.Description}</p>
+                {/* TODO DELETE */}
+                {isEdit && <p className="edit">DELETE</p>}
               </div>
         ));
 
@@ -171,17 +174,26 @@ const RootBlockOfRezume = () => {
                         <div className="links block">
                             {renderContactElements()}
                         </div>
-                        <button>Edit Mode</button>
+                        <button onClick={() => setIsEdit((prevState) => !prevState)}>Edit Mode</button>
                     </div>
                     <div className="next-text">
                         <div className="half">
                             <p className="tag">Work experience</p>
-                            <input 
-                            type="text"
-                            value={TextWork}
-                            
-                             />
                             {renderWorkElements()}
+                            {isEdit && (
+                                <>
+                                    <input 
+                                        placeholder="Title"
+                                        type="text"
+                                        value={TextWork}  
+                                    />
+                                    <input 
+                                        placeholder="Sub title"
+                                        type="text"
+                                        value={TextWork}  
+                                    />
+                                </>
+                            )}
                         </div>
                         <div className="half">
                             <p className="tag">Education & Learning</p>
